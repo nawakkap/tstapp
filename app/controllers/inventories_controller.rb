@@ -4,15 +4,7 @@ class InventoriesController < ApplicationController
   # GET /inventories
   # GET /inventories.json
   def index
-    #Getting Updated Data from LegacyInventory
-    Inventory.destroy_all
-    @legacyInventories = LegacyInventory.all
-    @legacyInventories.each do |legacyInventory|
-      Inventory.create(:code => legacyInventory.productCode, 
-                       :inventory => legacyInventory.inventory,
-                       :product_id => Product.find_by_code(legacyInventory.productCode).id)
-    end
-    
+    refreshInventoryLegacy
     @inventories = Inventory.all
   end
 

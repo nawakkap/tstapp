@@ -4,19 +4,7 @@ class BacklogsController < ApplicationController
   # GET /backlogs
   # GET /backlogs.json
   def index
-    #Getting Updated Data from LegacyBacklog
-    Backlog.destroy_all
-    @legacyBacklogs = LegacyBacklog.all
-    @legacyBacklogs.each do |legacyBacklog|
-      Backlog.create(:custname => legacyBacklog.custname, 
-                       :product_id => Product.find_by_code(legacyBacklog.productCode).id,
-                       :productCode => legacyBacklog.productCode,
-                       :sono => legacyBacklog.sono,
-                       :orderDate => legacyBacklog.orderDate,
-                       :orderAmt => legacyBacklog.orderAmt,
-                       :backlog => legacyBacklog.backlog)
-    end
-    
+    refreshBacklogLegacy  
     @backlogs = Backlog.all
   end
 
@@ -84,4 +72,6 @@ class BacklogsController < ApplicationController
     def backlog_params
       params.require(:backlog).permit(:custname, :product_id, :productCode, :sono, :orderDate, :orderAmt, :backlog)
     end
+    
+
 end
