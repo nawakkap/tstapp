@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916161646) do
+ActiveRecord::Schema.define(version: 20140917011745) do
+
+  create_table "products", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.float    "estWeight",  limit: 24
+    t.string   "machine"
+    t.float    "speed",      limit: 24
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "suppliers", force: true do |t|
     t.string   "name"
