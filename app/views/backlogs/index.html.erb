@@ -1,0 +1,48 @@
+<%- model_class = Backlog -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:custname) %></th>
+      <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:productCode) %></th>
+      <th><%= model_class.human_attribute_name(:sono) %></th>
+      <th><%= model_class.human_attribute_name(:orderDate) %></th>
+      <th><%= model_class.human_attribute_name(:orderAmt) %></th>
+      <th><%= model_class.human_attribute_name(:backlog) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @backlogs.each do |backlog| %>
+      <tr>
+        <td><%= link_to backlog.id, backlog_path(backlog) %></td>
+        <td><%= backlog.custname %></td>
+        <td><%= backlog.product_id %></td>
+        <td><%= backlog.productCode %></td>
+        <td><%= backlog.sono %></td>
+        <td><%= backlog.orderDate %></td>
+        <td><%= backlog.orderAmt %></td>
+        <td><%= backlog.backlog %></td>
+        <td><%=l backlog.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_backlog_path(backlog), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      backlog_path(backlog),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_backlog_path,
+            :class => 'btn btn-primary' %>

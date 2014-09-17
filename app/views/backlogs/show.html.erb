@@ -1,0 +1,31 @@
+<%- model_class = Backlog -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:custname) %>:</strong></dt>
+  <dd><%= @backlog.custname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
+  <dd><%= @backlog.product_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:productCode) %>:</strong></dt>
+  <dd><%= @backlog.productCode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sono) %>:</strong></dt>
+  <dd><%= @backlog.sono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderDate) %>:</strong></dt>
+  <dd><%= @backlog.orderDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:orderAmt) %>:</strong></dt>
+  <dd><%= @backlog.orderAmt %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:backlog) %>:</strong></dt>
+  <dd><%= @backlog.backlog %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              backlogs_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_backlog_path(@backlog), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              backlog_path(@backlog),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

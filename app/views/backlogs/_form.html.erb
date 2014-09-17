@@ -1,0 +1,73 @@
+<%= form_for @backlog, :html => { :class => "form-horizontal backlog" } do |f| %>
+
+    <% if @backlog.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@backlog.errors.count, "error") %> prohibited this backlog from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @backlog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :custname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :custname, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:custname]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :product_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :product_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:product_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :productCode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :productCode, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:productCode]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :sono, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sono, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:sono]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :orderDate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :orderDate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:orderDate]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :orderAmt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :orderAmt, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:orderAmt]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :backlog, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :backlog, :class => 'form-control' %>
+    </div>
+    <%= error_span(@backlog[:backlog]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            backlogs_path, :class => 'btn btn-default' %>
+
+<% end %>

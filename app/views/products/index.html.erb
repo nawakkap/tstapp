@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:inventory) %></th>
+			<th><%= model_class.human_attribute_name(:sumBacklog) %></th>
       <th><%= model_class.human_attribute_name(:estWeight) %></th>
       <th><%= model_class.human_attribute_name(:machine) %></th>
       <th><%= model_class.human_attribute_name(:speed) %></th>
@@ -21,7 +22,8 @@
         <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.code %></td>
         <td><%= product.name %></td>
-        <td><%= product.inventory.inventory %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.sumBacklog %></td>
         <td><%= number_with_precision(product.estWeight, precision: 2) %></td>
         <td><%= product.machine %></td>
         <td><%= product.speed %></td>

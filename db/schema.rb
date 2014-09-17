@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917020919) do
+ActiveRecord::Schema.define(version: 20140917033415) do
+
+  create_table "backlogs", force: true do |t|
+    t.string   "custname"
+    t.integer  "product_id"
+    t.string   "productCode"
+    t.string   "sono"
+    t.date     "orderDate"
+    t.integer  "orderAmt"
+    t.integer  "backlog"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "inventories", force: true do |t|
     t.integer  "product_id"

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :backlogs
+
   resources :inventories
 
   resources :products
