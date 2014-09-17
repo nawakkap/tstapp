@@ -9,6 +9,18 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
+#legacy system
+tssapp:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: db_tstandardsteel_v3
+  pool: 5
+  username: note
+  password: note
+  host: 192.168.1.8
+
+
 default: &default
   adapter: mysql2
   encoding: utf8
