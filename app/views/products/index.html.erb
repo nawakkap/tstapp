@@ -8,10 +8,10 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:inventory) %></th>
       <th><%= model_class.human_attribute_name(:estWeight) %></th>
       <th><%= model_class.human_attribute_name(:machine) %></th>
       <th><%= model_class.human_attribute_name(:speed) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -21,10 +21,10 @@
         <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.code %></td>
         <td><%= product.name %></td>
-        <td><%= product.estWeight %></td>
+        <td><%= product.inventory.inventory %></td>
+        <td><%= number_with_precision(product.estWeight, precision: 2) %></td>
         <td><%= product.machine %></td>
         <td><%= product.speed %></td>
-        <td><%=l product.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-default btn-xs' %>
