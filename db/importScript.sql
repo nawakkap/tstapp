@@ -10,4 +10,5 @@ machine AS machine,
 speed AS speed,
 NOW() AS created_at
 FROM prd_product_detail, (SELECT @rowid:=0) AS init
-WHERE in_production = 'Y';
+WHERE in_production = 'Y'
+ORDER BY CODE;

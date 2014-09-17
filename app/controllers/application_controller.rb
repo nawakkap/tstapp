@@ -29,4 +29,25 @@ class ApplicationController < ActionController::Base
                          :backlog => legacyBacklog.backlog)
       end
     end
+    
+    def refreshScheduleLegacy
+      #Getting Updated Data from LegacySchedule
+      refreshBacklogLegacy
+      
+      ActiveRecord::Base.connection.execute("TRUNCATE schedules")
+      @legacySchedules = LegacySchedule.all
+      @legacySchedules.each do |legacySchedule|
+        tmpBacklog = Backlog.find_by sono:legacySchedule.sono , productCode:legacySchedule.productCode
+        if tmpBacklog
+          Schedule.create(:backlog_id => tmpBacklog.id,
+                        :sono => legacySchedule.sono,
+                        :productCode => legacySchedule.productCode,
+                        :deliveryDate => legacySchedule.deliveryDate,
+                        :priority => legacySchedule.priority,
+                        :amt => legacySchedule.amt,
+                        :seq => legacySchedule.seq,
+                        :scheduler => legacySchedule.scheduler)
+        end
+      end
+    end
 end

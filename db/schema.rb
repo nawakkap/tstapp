@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917033415) do
+ActiveRecord::Schema.define(version: 20140917045133) do
 
   create_table "backlogs", force: true do |t|
     t.string   "custname"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20140917033415) do
     t.float    "estWeight",  limit: 24
     t.string   "machine"
     t.float    "speed",      limit: 24
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.integer  "backlog_id"
+    t.string   "sono"
+    t.string   "productCode"
+    t.date     "deliveryDate"
+    t.integer  "priority"
+    t.integer  "amt"
+    t.integer  "seq"
+    t.string   "scheduler"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

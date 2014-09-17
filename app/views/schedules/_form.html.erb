@@ -1,0 +1,80 @@
+<%= form_for @schedule, :html => { :class => "form-horizontal schedule" } do |f| %>
+
+    <% if @schedule.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @schedule.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :backlog_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :backlog_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:backlog_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :sono, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sono, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:sono]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :productCode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :productCode, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:productCode]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :deliveryDate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :deliveryDate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:deliveryDate]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :priority, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :priority, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:priority]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :amt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amt, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:amt]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :seq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :seq, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:seq]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :scheduler, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :scheduler, :class => 'form-control' %>
+    </div>
+    <%= error_span(@schedule[:scheduler]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            schedules_path, :class => 'btn btn-default' %>
+
+<% end %>

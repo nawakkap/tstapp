@@ -9,7 +9,6 @@
       <th><%= model_class.human_attribute_name(:product_id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:inventory) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +19,6 @@
         <td><%= inventory.product_id %></td>
         <td><%= inventory.code %></td>
         <td><%= inventory.inventory %></td>
-        <td><%=l inventory.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_inventory_path(inventory), :class => 'btn btn-default btn-xs' %>

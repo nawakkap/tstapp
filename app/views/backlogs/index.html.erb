@@ -13,7 +13,7 @@
       <th><%= model_class.human_attribute_name(:orderDate) %></th>
       <th><%= model_class.human_attribute_name(:orderAmt) %></th>
       <th><%= model_class.human_attribute_name(:backlog) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:scheduledAmt) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -28,7 +28,7 @@
         <td><%= backlog.orderDate %></td>
         <td><%= backlog.orderAmt %></td>
         <td><%= backlog.backlog %></td>
-        <td><%=l backlog.created_at %></td>
+        <td><%= backlog.scheduledAmt %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_backlog_path(backlog), :class => 'btn btn-default btn-xs' %>

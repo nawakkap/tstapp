@@ -1,0 +1,33 @@
+<%- model_class = Schedule -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:backlog_id) %>:</strong></dt>
+  <dd><%= @schedule.backlog_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sono) %>:</strong></dt>
+  <dd><%= @schedule.sono %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:productCode) %>:</strong></dt>
+  <dd><%= @schedule.productCode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deliveryDate) %>:</strong></dt>
+  <dd><%= @schedule.deliveryDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:priority) %>:</strong></dt>
+  <dd><%= @schedule.priority %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amt) %>:</strong></dt>
+  <dd><%= @schedule.amt %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seq) %>:</strong></dt>
+  <dd><%= @schedule.seq %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:scheduler) %>:</strong></dt>
+  <dd><%= @schedule.scheduler %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              schedules_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_schedule_path(@schedule), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              schedule_path(@schedule),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  backlog_id: 1
+  sono: MyString
+  productCode: MyString
+  deliveryDate: 2014-09-17
+  priority: 1
+  amt: 1
+  seq: 1
+  scheduler: MyString
+
+two:
+  backlog_id: 1
+  sono: MyString
+  productCode: MyString
+  deliveryDate: 2014-09-17
+  priority: 1
+  amt: 1
+  seq: 1
+  scheduler: MyString
