@@ -2,14 +2,14 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped" id="products">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:inventory) %></th>
-			<th><%= model_class.human_attribute_name(:sumBacklog) %></th>
+      <th><%= model_class.human_attribute_name(:sumBacklog) %></th>
       <th><%= model_class.human_attribute_name(:estWeight) %></th>
       <th><%= model_class.human_attribute_name(:machine) %></th>
       <th><%= model_class.human_attribute_name(:speed) %></th>

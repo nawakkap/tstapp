@@ -19,6 +19,7 @@ tssapp:
   username: note
   password: note
   host: 192.168.1.8
+  #host: tss.no-ip.biz
 
 
 default: &default

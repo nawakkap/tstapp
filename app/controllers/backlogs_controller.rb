@@ -4,7 +4,6 @@ class BacklogsController < ApplicationController
   # GET /backlogs
   # GET /backlogs.json
   def index
-    refreshBacklogLegacy  
     @backlogs = Backlog.all
   end
 

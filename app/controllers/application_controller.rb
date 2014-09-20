@@ -3,7 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  protected
+  def refreshAll
+    refreshInventoryLegacy
+    refreshBacklogLegacy
+    refreshScheduleLegacy
+    
+    flash[:notice]= "Refresh All Successfully"
+    redirect_to products_path
+  end
+  
+  private
     def refreshInventoryLegacy
       #Getting Updated Data from LegacyInventory
       ActiveRecord::Base.connection.execute("TRUNCATE inventories")
@@ -50,4 +59,6 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+    
+
 end

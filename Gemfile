@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'jquery-datatables-rails'
+
+# Fix Turbolink preventing jQuery starting 
+gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'

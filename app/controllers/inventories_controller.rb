@@ -4,7 +4,6 @@ class InventoriesController < ApplicationController
   # GET /inventories
   # GET /inventories.json
   def index
-    refreshInventoryLegacy
     @inventories = Inventory.all
   end
 

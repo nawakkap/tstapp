@@ -4,8 +4,6 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    refreshScheduleLegacy
-    
     @schedules = Schedule.all
   end
 

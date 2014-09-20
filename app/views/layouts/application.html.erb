@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <button type="button" class="btn btn-primary"><%= link_to "Refresh datasource", refreshAll_path %></button>  
+  <ul class="nav nav-tabs">
+    <li class="<%= 'active' if params[:controller] == 'backlogs' %>"> <%= link_to "Backlogs", backlogs_path %> </li>
+    <li class="<%= 'active' if params[:controller] == 'schedules' %>"> <%= link_to "Schedules", schedules_path %> </li>
+    <li class="<%= 'active' if params[:controller] == 'inventories' %>"> <%= link_to "Inventories", inventories_path %> </li>
+    <li class="<%= 'active' if params[:controller] == 'products' %>"> <%= link_to "Products", products_path %> </li>
+    <li class="<%= 'active' if params[:controller] == 'suppliers' %>"> <%= link_to "Suppliers", suppliers_path %> </li>
+  </ul>
 <%= yield %>
 
 </body>

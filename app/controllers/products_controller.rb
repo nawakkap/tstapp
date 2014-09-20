@@ -3,10 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
-  def index
-    refreshInventoryLegacy
-    refreshBacklogLegacy
-    
+  def index    
     @products = Product.all
   end
 
