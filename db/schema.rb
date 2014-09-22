@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917045133) do
+ActiveRecord::Schema.define(version: 20140920073019) do
 
   create_table "backlogs", force: true do |t|
     t.string   "custname"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140917045133) do
     t.date     "orderDate"
     t.integer  "orderAmt"
     t.integer  "backlog"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "internal_values", force: true do |t|
+    t.string   "category"
+    t.string   "name"
+    t.string   "value"
+    t.integer  "seq"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

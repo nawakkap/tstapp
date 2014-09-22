@@ -1,0 +1,52 @@
+<%= form_for @internal_value, :html => { :class => "form-horizontal internal_value" } do |f| %>
+
+    <% if @internal_value.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@internal_value.errors.count, "error") %> prohibited this internal_value from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @internal_value.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :category, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :category, :class => 'form-control' %>
+    </div>
+    <%= error_span(@internal_value[:category]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@internal_value[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :value, :class => 'form-control' %>
+    </div>
+    <%= error_span(@internal_value[:value]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :seq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :seq, :class => 'form-control' %>
+    </div>
+    <%= error_span(@internal_value[:seq]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            internal_values_path, :class => 'btn btn-default' %>
+
+<% end %>

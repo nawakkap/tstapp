@@ -107,3 +107,14 @@ insert into `products` (`id`, `code`, `name`, `estWeight`, `machine`, `speed`, `
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine`, `speed`, `created_at`) values('63','0SQT1501601','แป็บสี่เหลี่ยม 1 1/2\"x1.60 มม. (แดง) (10.0 - 10.5k','10.188','P2','10',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine`, `speed`, `created_at`) values('64','0SQT1501700','แป็บสี่เหลี่ยม 1 1/2\"x1.70 มม. (เขียว) (10.3 - 10.','10.465149','P2','10',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine`, `speed`, `created_at`) values('65','0SQT1501900','แป็บสี่เหลี่ยม 1 1/2\"x1.90 มม.. (ส้ม) (12.0- 12.5 ','12.099048','P2','10',now());
+
+/* Seed for Internal_value */
+
+INSERT INTO `internal_values` (`id`, `category`, `name`, `value`, `seq`, `created_at`, `updated_at`) VALUES
+(1, 'WORKTIME', 'C2', '480', 1, '2014-09-20 07:31:04', '2014-09-20 07:31:04'),
+(2, 'WORKTIME', 'C3', '480', 2, '2014-09-20 07:31:18', '2014-09-20 07:31:18'),
+(3, 'WORKTIME', 'C4', '480', 3, '2014-09-20 07:31:18', '2014-09-20 07:31:18'),
+(4, 'WORKTIME', 'C5', '480', 4, '2014-09-20 07:31:18', '2014-09-20 07:31:18'),
+(5, 'WORKTIME', 'P1', '480', 5, '2014-09-20 07:31:18', '2014-09-20 07:31:18'),
+(6, 'WORKTIME', 'P2', '480', 6, '2014-09-20 07:31:18', '2014-09-20 07:31:18'),
+(7, 'WORKTIME', 'P3', '480', 7, '2014-09-20 07:31:18', '2014-09-20 07:31:18');

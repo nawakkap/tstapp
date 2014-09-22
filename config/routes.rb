@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :internal_values
+
   resources :schedules
 
   resources :backlogs
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   resources :suppliers
   
   match 'refreshAll', to: 'application#refreshAll', via: :get
+  
+  root :to => 'backlogs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

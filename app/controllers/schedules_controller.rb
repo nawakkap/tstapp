@@ -4,7 +4,15 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+      if params[:idList] then
+        #Convert back escape character of ","
+        params[:idList]["%2C"] = "," if params[:idList]["%2C"]
+        param_a = params[:idList].split(",").map { |s| s.to_i }
+        
+        @schedules = Schedule.find(param_a)
+      else
+        @schedules = Schedule.all
+      end      
   end
 
   # GET /schedules/1

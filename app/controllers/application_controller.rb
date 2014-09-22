@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     refreshScheduleLegacy
     
     flash[:notice]= "Refresh All Successfully"
-    redirect_to products_path
+    redirect_to backlogs_path
   end
   
   private

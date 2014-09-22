@@ -5,29 +5,27 @@
 <table class="table table-striped" id="backlogs">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:custname) %></th>
-      <th><%= model_class.human_attribute_name(:productName) %></th>
       <th><%= model_class.human_attribute_name(:sono) %></th>
       <th><%= model_class.human_attribute_name(:orderDate) %></th>
-      <th><%= model_class.human_attribute_name(:orderAmt) %></th>
+      <th><%= model_class.human_attribute_name(:custname) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:order) %></th>
       <th><%= model_class.human_attribute_name(:backlog) %></th>
-      <th><%= model_class.human_attribute_name(:scheduledAmt) %></th>
-      <th><%= model_class.human_attribute_name(:assignedMachine) %></th>
+      <th><%= model_class.human_attribute_name(:scheduled) %></th>
+      <th><%= model_class.human_attribute_name(:machine) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @backlogs.each do |backlog| %>
       <tr>
-        <td><%= link_to backlog.id, backlog_path(backlog) %></td>
-        <td><%= backlog.custname %></td>
-        <td><%= backlog.product.name %></td>
         <td><%= backlog.sono %></td>
         <td><%= backlog.orderDate %></td>
+        <td><%= backlog.custname %></td>
+        <td><%= backlog.product.name %></td>
         <td><%= backlog.orderAmt %></td>
-        <td><%= backlog.backlog %></td>
-        <td><%= backlog.scheduledAmt %></td>
+        <td><%= backlog.scheduledAmt > backlog.backlog ? content_tag(:strong, backlog.backlog) : backlog.backlog %></td>
+        <td><%= link_to backlog.scheduledAmt, schedules_path(idList: backlog.schedulesKey) %></td>
         <td><%= backlog.product.machine %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
