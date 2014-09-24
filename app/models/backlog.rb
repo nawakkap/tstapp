@@ -22,4 +22,8 @@ class Backlog < ActiveRecord::Base
     
     schedulesKeyList.chomp(',')
   end
+  
+  def weightBacklog
+    self.backlog * self.product.estWeight
+  end
 end

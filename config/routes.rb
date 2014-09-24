@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :machines
+
   resources :internal_values
 
   resources :schedules

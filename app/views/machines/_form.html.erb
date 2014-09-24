@@ -1,0 +1,45 @@
+<%= form_for @machine, :html => { :class => "form-horizontal machine" } do |f| %>
+
+    <% if @machine.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@machine.errors.count, "error") %> prohibited this machine from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @machine.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@machine[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :workdays, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workdays, :class => 'form-control' %>
+    </div>
+    <%= error_span(@machine[:workdays]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :workhours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :workhours, :class => 'form-control' %>
+    </div>
+    <%= error_span(@machine[:workhours]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            machines_path, :class => 'btn btn-default' %>
+
+<% end %>

@@ -5,6 +5,8 @@ class BacklogsController < ApplicationController
   # GET /backlogs.json
   def index
     @backlogs = Backlog.all
+    @machineLists = Machine.all
+    #@worktimes = InternalValue.where(category: :WORKTIME)
   end
 
   # GET /backlogs/1

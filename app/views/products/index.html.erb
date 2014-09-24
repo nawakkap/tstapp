@@ -25,7 +25,7 @@
         <td><%= product.stock %></td>
         <td><%= product.sumBacklog %></td>
         <td><%= number_with_precision(product.estWeight, precision: 2) %></td>
-        <td><%= product.machine %></td>
+        <td><%= product.machine.name %></td>
         <td><%= product.speed %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

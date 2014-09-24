@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
     has_one :inventory
     has_many :backlogs
+    belongs_to :machine
     
     def sumBacklog
       self.backlogs.sum(:backlog)
@@ -10,11 +11,25 @@ class Product < ActiveRecord::Base
       self.inventory.inventory
     end
     
-    def worktime_day
-      InternalValue.find_by(category: :WORKTIME , name: self.machine).value
+    def sumBalance
+      self.stock - self.sumBacklog
     end
     
-    def worktime_week
-      self.worktime_day.to_i*7
+    def stockUnscheduled
+      self.stock - self.sumScheduled
+    end
+    
+    def sumScheduled
+      totalScheduledAmt = 0
+      
+      self.backlogs.each do |bl| 
+        totalScheduledAmt = totalScheduledAmt + bl.scheduledAmt
+      end
+      
+      totalScheduledAmt
+    end
+    
+    def sumMinsBal
+      (self.sumBacklog-self.stock)/self.speed
     end
 end

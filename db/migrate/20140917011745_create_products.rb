@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :code
       t.string :name
       t.float :estWeight
-      t.string :machine
+      t.integer :machine_id
       t.float :speed
 
       t.timestamps

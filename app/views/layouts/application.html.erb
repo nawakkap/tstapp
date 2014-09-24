@@ -17,6 +17,7 @@
     <li class="<%= 'active' if params[:controller] == 'inventories' %>"> <%= link_to "Inventories", inventories_path %> </li>
     <li class="<%= 'active' if params[:controller] == 'products' %>"> <%= link_to "Products", products_path %> </li>
     <li class="<%= 'active' if params[:controller] == 'suppliers' %>"> <%= link_to "Suppliers", suppliers_path %> </li>
+    <li class="<%= 'active' if params[:controller] == 'machines' %>"> <%= link_to "Machines", machines_path %> </li>
   </ul>
 <%= yield %>
 
