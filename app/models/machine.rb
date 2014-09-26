@@ -8,7 +8,7 @@ class Machine < ActiveRecord::Base
       totalMinsBacklogs = totalMinsBacklogs + p.sumMinsBal
     end
     
-    totalMinsBacklogs > 0 ? totalMinsBacklogs : 0
+    totalMinsBacklogs
   end
   
   def totalBalUnit
@@ -18,7 +18,7 @@ class Machine < ActiveRecord::Base
       totalBal = totalBal + p.sumBalance
     end
     
-    totalBal < 0 ? totalBal.abs : 0
+    totalBal
   end
   
   def totalBacklogsUnit

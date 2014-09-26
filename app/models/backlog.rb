@@ -26,4 +26,12 @@ class Backlog < ActiveRecord::Base
   def weightBacklog
     self.backlog * self.product.estWeight
   end
+  
+  def deliveryDate
+    if self.schedules.first then
+      self.schedules.first.deliveryDate
+    else
+      ""
+    end
+  end
 end

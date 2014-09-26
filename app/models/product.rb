@@ -12,7 +12,9 @@ class Product < ActiveRecord::Base
     end
     
     def sumBalance
-      self.stock - self.sumBacklog
+      balance = self.stock - self.sumBacklog
+      
+      balance <= 0 ? balance.abs : 0
     end
     
     def stockUnscheduled
@@ -30,6 +32,8 @@ class Product < ActiveRecord::Base
     end
     
     def sumMinsBal
-      (self.sumBacklog-self.stock)/self.speed
+      minsBalance = (self.stock - self.sumBacklog)/self.speed
+      
+      minsBalance <= 0 ? minsBalance.abs : 0
     end
 end

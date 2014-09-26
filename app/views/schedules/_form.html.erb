@@ -1,3 +1,8 @@
+<script>
+      $(function() {
+          $( "#datetimepicker1" ).datepicker();
+      });
+  </script>
 <%= form_for @schedule, :html => { :class => "form-horizontal schedule" } do |f| %>
 
     <% if @schedule.errors.any? %>
@@ -18,21 +23,21 @@
   <div class="control-group">
     <%= f.label :backlog_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :backlog_id, :class => 'form-control' %>
+      <%= f.text_field :backlog_id, :class => 'form-control', :value => @backlogId %>
     </div>
     <%= error_span(@schedule[:backlog_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :sono, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :sono, :class => 'form-control' %>
+      <%= f.text_field :sono, :class => 'form-control', :value => @sono %>
     </div>
     <%= error_span(@schedule[:sono]) %>
   </div>
   <div class="control-group">
     <%= f.label :productCode, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :productCode, :class => 'form-control' %>
+      <%= f.text_field :productCode, :class => 'form-control', :value => @productCode %>
     </div>
     <%= error_span(@schedule[:productCode]) %>
   </div>

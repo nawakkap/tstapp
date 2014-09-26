@@ -8,6 +8,7 @@
       <th><%= "Machine" %></th>
       <th class="text-right"><%=  "Weekly Mins" %></th>
       <th class="text-right"><%=  "Balance Mins" %></th>
+      <th class="text-right"><%=  "Backlog Units" %></th>
       <th class="text-right"><%=  "Balance Units" %></th>
       <th class="text-right"><%=  "Scheduled Units" %></th>
     </tr>
@@ -19,6 +20,7 @@
         <td class="text-right"><%= number_to_currency(ml.mins, precision:0, unit: "") %></td>
         <td class="text-right"><%= number_to_currency(ml.totalMinsBal, precision:0, unit: "") %>
             (<%= number_to_percentage(ml.pctUsed, precision: 1) %>)</td>
+        <td class="text-right"><%= number_to_currency(ml.totalBacklogsUnit, precision:0, unit: "") %></td>
         <td class="text-right"><%= number_to_currency(ml.totalBalUnit, precision:0, unit: "") %></td>
         <td class="text-right"><%= number_to_currency(ml.totalScheduledUnit, precision:0, unit: "") %>
             (<%= number_to_percentage(ml.pctScheduled, precision: 1) %>)</td>
@@ -29,7 +31,6 @@
 <table class="table table-striped" id="backlogs">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:sono) %></th>
       <th><%= model_class.human_attribute_name(:orderDate) %></th>
       <th><%= model_class.human_attribute_name(:custname) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
@@ -37,6 +38,7 @@
       <th><%= model_class.human_attribute_name(:backlog) %></th>
       <th><%= model_class.human_attribute_name(:scheduled) %></th>
       <th><%= model_class.human_attribute_name(:weight) %></th>
+      <th><%= model_class.human_attribute_name(:scheduledDate) %></th>
       <th><%= model_class.human_attribute_name(:machine) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -44,14 +46,14 @@
   <tbody>
     <% @backlogs.each do |backlog| %>
       <tr>
-        <td><%= backlog.sono %></td>
         <td><%= backlog.orderDate %></td>
         <td><%= backlog.custname %></td>
         <td><%= backlog.product.name %></td>
         <td><%= backlog.product.stockUnscheduled %></td>
         <td><%= backlog.scheduledAmt > backlog.backlog ? content_tag(:strong, backlog.backlog) : backlog.backlog %></td>
-        <td><%= link_to backlog.scheduledAmt, schedules_path(idList: backlog.schedulesKey) %></td>
+        <td><%= link_to backlog.scheduledAmt, schedules_path(idList: backlog.schedulesKey, backlogId: backlog.id) %></td>
         <td><%= number_to_currency(backlog.weightBacklog, precision: 0, unit: "") %></td>
+        <td><%= backlog.deliveryDate %></td>
         <td><%= backlog.product.machine.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

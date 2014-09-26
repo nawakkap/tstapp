@@ -44,5 +44,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_schedule_path,
-            :class => 'btn btn-primary' %>
+            new_schedule_path(:backlogId => @backlogId ),
+            :class => 'btn btn-primary'%>

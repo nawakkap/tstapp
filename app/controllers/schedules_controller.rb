@@ -4,6 +4,8 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
+      @backlogId = params[:backlogId]
+      
       if params[:idList] then
         #Convert back escape character of ","
         params[:idList]["%2C"] = "," if params[:idList]["%2C"]
@@ -12,7 +14,7 @@ class SchedulesController < ApplicationController
         @schedules = Schedule.find(param_a)
       else
         @schedules = Schedule.all
-      end      
+      end
   end
 
   # GET /schedules/1
@@ -23,6 +25,15 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   def new
     @schedule = Schedule.new
+    @backlogId = ""
+    @sono = ""
+    @productCode = ""
+    if params[:backlogId] then
+      backlog = Backlog.find(params[:backlogId])
+      @backlogId = backlog.id
+      @sono = backlog.sono
+      @productCode = backlog.product.code
+    end
   end
 
   # GET /schedules/1/edit
