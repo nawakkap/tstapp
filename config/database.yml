@@ -18,8 +18,8 @@ tssapp:
   pool: 5
   username: note
   password: note
-  host: 192.168.1.8
-  #host: tss.no-ip.biz
+  #host: 192.168.1.8
+  host: tss.no-ip.biz
 
 
 default: &default
@@ -27,8 +27,10 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: root
-  socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  password: qnfaTtqxUQ
+  #socket: /Applications/MAMP/tmp/mysql/mysql.sock
+  #port: 8889
+  host: localhost
 
 development:
   <<: *default
