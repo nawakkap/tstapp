@@ -53,7 +53,7 @@ insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('9','0CTC3001600*','เหล็กตัวซี 75 x 45 x 15x1.6มม.x6.0ม.  (ฟ้าเหลือง)','12.09999',3,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('10','0CTC3001601','เหล็กตัวซี 75 x 45 x 15x1.6มม.x6.0ม.  (แดง)','13.172928',1,'5',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('11','0CTC3001602','เหล็กตัวซี 75 x 45 x 15x1.6มม.x6.0ม.  (เขียว)','13.996236',1,'5',now());
-insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('12','0CTC300200*','เหล็กตัวซี 75 x 45 x 15x2.0มม.x6.0ม.  (ฟ้าส้ม)','14.855',1,'5',now());
+insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('12','0CTC300200*','เหล็กตัวซี 75 x 45 x 15x2.0มม.x6.0ม.  (ขาวส้ม)','14.855',1,'5',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('13','0CTC3002000','เหล็กตัวซี 75 x 45 x 15x2.0มม.x6.0ม.  (ส้ม)','15.642852',1,'5',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('14','0CTC3002300','เหล็กตัวซี 75 x 45 x 15x2.3มม.x6.0ม.  (ม่วง)','17.289468',1,'5',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('15','0CTC3501600','เหล็กตัวซี 90 x 45 x 20x1.6มม.x6.0ม.  (เหลือง)','13.45176',3,'6',now());
@@ -61,7 +61,7 @@ insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('17','0CTC4001600*','เหล็กตัวซี 100 x 50 x 20x1.6มม.x6.0ม.  (ฟ้าเหลือง)','15.1662',2,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('18','0CTC4001601','เหล็กตัวซี 100 x 50 x 20x1.6มม.x6.0ม.  (แดง)','16.42848',2,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('19','0CTC4001700','เหล็กตัวซี 100 x 50 x 20x1.6มม.x6.0ม.  (เขียว)','17.45526',2,'6',now());
-insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('20','0CTC400200*','เหล็กตัวซี 100 x 50 x 20x2.0มม.x6.0ม.  (ฟ้าส้ม)','18.882',2,'6',now());
+insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('20','0CTC400200*','เหล็กตัวซี 100 x 50 x 20x2.0มม.x6.0ม.  (ขาวส้ม)','18.882',2,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('21','0CTC4002000','เหล็กตัวซี 100 x 50 x 20x2.0มม.x6.0ม.  (ส้ม)','19.509',2,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('22','0CTC4002300','เหล็กตัวซี 100 x 50 x 20x2.3มม.x6.0ม.  (ม่วง)','21.56238',2,'6',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('23','0CTC4002300*','เหล็กตัวซี 100 x 50 x 20x2.3มม.x6.0ม.  (ฟ้าม่วง)','22.25475',2,'6',now());
@@ -107,6 +107,8 @@ insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('63','0SQT1501601','แป็บสี่เหลี่ยม 1 1/2\"x1.60 มม. (แดง) (10.0 - 10.5k','10.188',6,'10',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('64','0SQT1501700','แป็บสี่เหลี่ยม 1 1/2\"x1.70 มม. (เขียว) (10.3 - 10.','10.465149',6,'10',now());
 insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('65','0SQT1501900','แป็บสี่เหลี่ยม 1 1/2\"x1.90 มม.. (ส้ม) (12.0- 12.5 ','12.099048',6,'10',now());
+insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('66','0CTC300160*','เหล็กตัวซี 75 x 45 x 15x1.6มม.x6.0ม.  (ขาวเหลือง)','11.078',1,'7',now());
+insert into `products` (`id`, `code`, `name`, `estWeight`, `machine_id`, `speed`, `created_at`) values('67','0CTC400160*','เหล็กตัวซี 100 x 50 x 20x1.6มม.x6.0ม.  (ขาวเหลือง)','13.847',2,'5',now());	
 
 /* Seed for Internal_value */
 
